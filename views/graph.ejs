@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        div{
+            height: 30px;
+            margin: 10px;
+            background-color: pink;
+            color: red;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    
+<h1>Graph</h1>
+   
+        <%if(response){%>
+      <div><%=JSON.stringify(response)%></div>
+            <%}%>
+   
+
+    <script>
+  fetch('http://node95215-env-5308485.jelastic.saveincloud.net/arquivo.json', { method: 'GET' })
+    .then(response => response.json())
+    .then(texto => console.log(texto))
+    .catch(err => console.log(err.message))
+        
+      </script>
+</body>
+</html>

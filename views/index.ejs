@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .bl{
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div>
+   
+       
+    <%if(response){%>
+   
+<%response.data.forEach(e=>{%>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Slug</th>
+            <th scope="col">num_market_pairs</th>
+            <th scope="col">date_added</th>
+            <th scope="col">tags</th>
+            <th scope="col">max_supply</th>
+            <th scope="col">circulating_supply</th>
+            <th scope="col">total_supply</th>
+            <th scope="col">cmc_rank</th>
+            <th scope="col">last_updated</th>
+            <th scope="col">quote</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><%=e.id%></th>
+            <td><%=e.name%></td>
+            <td><%=e.symbol%></td>
+            <td><%=e.slug%></td>
+            <td><%=e.num_market_pairs%></td>
+            <td><%=e.date_added%></td>
+            <td><%=e.tags%></td>
+            <td><%=e.max_supply%></td>
+            <td><%=e.circulating_supply%></td>
+            <td><%=e.total_supply%></td>
+            <td><%=e.cmc_rank%></td>
+            <td><%=e.last_updated%></td>
+            <td> 
+                <div style="display:inline;"><label class="bl" for="">price</label><%=JSON.stringify(e.quote['USD'].price)%></div>
+                <div><label class="bl" for="">volume_24h</label><%=JSON.stringify(e.quote['USD'].volume_24h)%></div>
+                <div><label class="bl" for="">volume_change_24h</label><%=JSON.stringify(e.quote['USD'].volume_change_24h)%></div>
+                <div><label class="bl" for="">percent_change_1h</label><%=JSON.stringify(e.quote['USD'].percent_change_1h)%></div>
+                <div><label class="bl" for="">percent_change_24h</label><%=JSON.stringify(e.quote['USD'].percent_change_24h)%></div>
+                <div><label class="bl" for="">percent_change_7d</label><%=JSON.stringify(e.quote['USD'].percent_change_7d)%></div>
+                <div><label class="bl" for="">percent_change_30d</label><%=JSON.stringify(e.quote['USD'].percent_change_30d)%></div>
+                <div><label class="bl" for="">percent_change_60d</label><%=JSON.stringify(e.quote['USD'].percent_change_60d)%></div>
+                <div><label class="bl" for="">percent_change_90d</label><%=JSON.stringify(e.quote['USD'].percent_change_90d)%></div>
+                <div><label class="bl" for="">market_cap</label><%=JSON.stringify(e.quote['USD'].market_cap)%></div>
+                <div><label class="bl" for="">market_cap_dominance</label><%=JSON.stringify(e.quote['USD'].market_cap_dominance)%></div>
+                <div><label class="bl" for="">fully_diluted_market_cap</label><%=JSON.stringify(e.quote['USD'].fully_diluted_market_cap)%></div>
+                <div><label class="bl" for="">last_updated</label><%=JSON.stringify(e.quote['USD'].last_updated)%></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+<%})%>
+    <%}%>
+ 
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

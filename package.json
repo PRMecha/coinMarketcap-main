@@ -1,0 +1,27 @@
+{
+  "name": "coinprince",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "certbot": "^5.0.3",
+    "cors": "^2.8.5",
+    "crypto-price": "^0.0.6",
+    "d3": "^7.4.3",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.13.0",
+    "nodemon": "^2.0.15"
+  }
+}
