@@ -60,8 +60,8 @@ app.get('/',  (req, res) =>{
         'convert': 'USD'
       },
       headers: {
-        'X-CMC_PRO_API_KEY': 'ecd23aec-b6fb-488c-9cd5-8cf4946162bb'
-        // 'X-CMC_PRO_API_KEY': 'ea788466-6ba3-4ffa-990f-eff31d09bed7'
+        //'X-CMC_PRO_API_KEY': 'ecd23aec-b6fb-488c-9cd5-8cf4946162bb'
+          'X-CMC_PRO_API_KEY': 'ea788466-6ba3-4ffa-990f-eff31d09bed7'
       },
       json: true,
       gzip: true
