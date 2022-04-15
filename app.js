@@ -148,7 +148,7 @@ app.get('/graph', (req, res)=>{
     const geistData = JSON.parse(js).filter(({name})=> name == 'Geist Finance')
     const chaninlinktData = JSON.parse(js).filter(({name})=> name == 'Chainlink')
     // const ethereumDataQuote = ethereumData[0].quote
-    const TranchessData = JSON.parse(js).filter(({name})=> name == 'Tranchess')
+    const tranchessData = JSON.parse(js).filter(({name})=> name == 'Tranchess')
 
     // console.log(ethereumDataQuote.USD)
     // console.log(polkadotDataQuote.USD)
@@ -186,9 +186,9 @@ app.get('/graph', (req, res)=>{
     const screamStringify = JSON.stringify(screamData)
     const geistStringify = JSON.stringify(geistData)
     const chainlinkStringify = JSON.stringify(chaninlinktData)
-    const TranchessStringify = JSON.stringify(TranchessData)
+    const tranchessStringify = JSON.stringify(tranchessData)
 
-    const etheUniswapData = `[${ethereumDataStringify+','+uniswapDataStringify+','+ aaveDataStringify+','+inchDataStringify+','+theSandBoxStringify+','+solanaStringify+','+raydiumStringify+','+solendStringify+','+saberStringify+','+orcaStringify+','+binanceStringify+','+pancakeswapStringify+','+biswapStringify+','+babyswapStringify+','+autosharkStringify+','+polygonStringify+','+dfynnetworkStringify+','+quickswapStringify+','+pegaxyStringify+','+apeswapStringify+','+avalancheStringify+','+avalaunchStringify+','+crabadaStringify+','+benqiStringify+','+pangolinStringify+','+fantomStringify+','+spookyswapStringify+','+solidlyStringify+','+screamStringify+','+geistStringify+','+chainlinkStringify+','+TranchessStringify}]`
+    const etheUniswapData = `[${ethereumDataStringify+','+uniswapDataStringify+','+ aaveDataStringify+','+inchDataStringify+','+theSandBoxStringify+','+solanaStringify+','+raydiumStringify+','+solendStringify+','+saberStringify+','+orcaStringify+','+binanceStringify+','+pancakeswapStringify+','+biswapStringify+','+babyswapStringify+','+tranchessStringify+','+polygonStringify+','+dfynnetworkStringify+','+quickswapStringify+','+pegaxyStringify+','+apeswapStringify+','+avalancheStringify+','+avalaunchStringify+','+crabadaStringify+','+benqiStringify+','+pangolinStringify+','+fantomStringify+','+spookyswapStringify+','+solidlyStringify+','+screamStringify+','+geistStringify+','+chainlinkStringify}]`
     // const polkaEthDataParse = JSON.parse(polkaEtheData)
     
     fs.writeFile('./public/arquivo.json',etheUniswapData, (err)=>{
