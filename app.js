@@ -87,7 +87,8 @@ app.get('/graph', (req, res)=>{
       'convert': 'USD',
     },
     headers: {
-      'X-CMC_PRO_API_KEY': '072dbdcc-167c-4208-aaed-e89a5dde7275'
+      // 'X-CMC_PRO_API_KEY': '072dbdcc-167c-4208-aaed-e89a5dde7275'
+      'X-CMC_PRO_API_KEY': 'ea788466-6ba3-4ffa-990f-eff31d09bed7'
     },
     json: true,
     gzip: true
