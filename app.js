@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 /* Example in Node.js ES6 using request-promise */
 require('dotenv').config();
 const express = require('express')
@@ -60,8 +62,7 @@ app.get('/',  (req, res) =>{
         'convert': 'USD'
       },
       headers: {
-        //'X-CMC_PRO_API_KEY': 'ecd23aec-b6fb-488c-9cd5-8cf4946162bb'
-          'X-CMC_PRO_API_KEY': 'ea788466-6ba3-4ffa-990f-eff31d09bed7'
+        'X-CMC_PRO_API_KEY': 'ecd23aec-b6fb-488c-9cd5-8cf4946162bb'
       },
       json: true,
       gzip: true
@@ -87,8 +88,7 @@ app.get('/graph', (req, res)=>{
       'convert': 'USD',
     },
     headers: {
-      // 'X-CMC_PRO_API_KEY': '072dbdcc-167c-4208-aaed-e89a5dde7275'
-      'X-CMC_PRO_API_KEY': 'ea788466-6ba3-4ffa-990f-eff31d09bed7'
+      'X-CMC_PRO_API_KEY': 'ecd23aec-b6fb-488c-9cd5-8cf4946162bb'
     },
     json: true,
     gzip: true
@@ -210,4 +210,23 @@ app.get('/graph', (req, res)=>{
 app.listen(PORT, ()=>{
     console.log('listening on port', PORT)
 })
+
+setInterval(function(){
+  getUser()
+}, 5000);
+
+async function getUser() {
+  try {
+    const response = await fetch('https://ancient-garden-81017.herokuapp.com/graph');
+
+    if (!response.ok) {
+      throw new Error(`Error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (err) {
+    console.log(err);
+  }
+}
 
